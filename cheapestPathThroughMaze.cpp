@@ -36,7 +36,6 @@ int getCheapestPath(int i, int j){
     if(isValid(i + 1, j + 1)){
         cheapest = min(cheapest, matrix[i][j] + getCheapestPath( i + 1, j + 1));
     }
-    //visited[i].insert(j);
     dp[i][j] = cheapest;
     return cheapest;
 }
@@ -60,13 +59,6 @@ int main(){
             matrix[i][j] = row[j] - '0';
         }    
     }
-
-    // for(int i = 0; i < n; i++){
-    //     for(int j = 0; j < n; j ++){
-    //         cout<<matrix[i][j]<<" ";
-    //     }
-    //     cout<<endl;
-    // }
 
     int cheapest = INT_MAX;
     for(int i = 0; i < n; i++){
